@@ -1,4 +1,4 @@
-# Chapter 3, Project 3 from Operating Systems Concepts by Silberschatz
+# Chapter 3, Project 3 from Operating Systems Concepts by Silberschatz, Galvin, Gagne
 ## Task 1- Iterating over Tasks Linearly
 Code is designed to read through the task struct structure in <linux/sched.h> linearly to obtain the names of all tasks in the system.
 
