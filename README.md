@@ -4,7 +4,7 @@ Code is designed to read through the task struct structure in <linux/sched.h> li
 
 To verify that your code is working correctly, compare the contents of the kernel log buffer with the output of the following command, which lists all tasks in the system:
 
-  ps -el
+   ps -el
 
 The two values should be very similar. Because tasks are dynamic, however, it is possible that a few tasks may appear in one listing but not the other.
 
@@ -13,6 +13,6 @@ Code is designed to read through the task struct structure in <linux/sched.h> us
 
 To check the output of the DFS tree, use the command 
 
-  ps -eLf
+   ps -eLf
 
 This command lists all tasks—including threads—in the system.
