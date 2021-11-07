@@ -11,11 +11,11 @@ struct task_struct *Task;
 int Module_Entry(void)
 {
     printk(KERN_INFO "Loading kernel Module\n");
-    printk("  PID   state     CMD\n");
+    printk("PID   state     CMD\n");
     //iterating linearly over all processes
     for_each_process(Task)
     {
-        printk("%5d   %4ld   %s\n",Task->pid,Task->state,Task->comm);
+        printk("%-5d   %-4ld   %s\n",Task->pid,Task->state,Task->comm);
     }
     return 0;
 }
@@ -28,7 +28,7 @@ void Module_Exit(void)
 
 module_init(Module_Entry);
 module_exit(Module_Exit);
-MODULE_DESCRIPTION("Process details Module");
+MODULE_DESCRIPTION("Process details Module(linearly)");
 MODULE_AUTHOR("SGG");
 MODULE_LICENSE("GPL");
 

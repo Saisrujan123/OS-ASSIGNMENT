@@ -1,38 +1,40 @@
+//header files required for the task
 #include<linux/init.h>
 #include<linux/kernel.h>
 #include<linux/module.h>
 #include<linux/sched/signal.h>
 
-void dfs_search(struct task_struct *task)
+//function to perform DFS traversal on all processes
+void DFS_Search(struct task_struct *Task)
 {
-	struct task_struct *next;
-	struct list_head *list;
-	printk("%d   %d   %d	%s\n",task->pid,task->parent->pid,task->state,task->comm);
-	
-	list_for_each(list, &task->children)
+	struct task_struct *Next;
+	struct list_head *List;
+	printk("%-5d   %-4ld   %s\n",Task->pid,Task->state,Task->comm);
+	// DFS Traversal on processes
+	list_for_each(List, &Task->children)
 	{
-		next = list_entry(list, struct task_struct, sibling);
-		
-		dfs_search(next);
+		Next = list_entry(List, struct task_struct, sibling);
+		DFS_Search(Next);
 	}
-	
 }
 
-int module_entry(void)
+//function called when module is loaded
+int Module_Entry(void)
 {
 	printk(KERN_INFO "Loading kernel module...");
-	printk(" PID \tState \tCMD\n");
-	dfs_search(&init_task);
+    printk("PID   state     CMD\n");
+	DFS_Search(&init_task);
 	return 0;
 }
 
-void module_Exit(void)
+//function called when module is removed
+void Module_Exit(void)
 {
 	printk(KERN_INFO "Removing kernel module...");
 }
 
-module_init(module_entry);
-module_exit(module_Exit);
-MODULE_DESCRIPTION("Process details Module");
+module_init(Module_Entry);
+module_exit(Module_Exit);
+MODULE_DESCRIPTION("Process details Module(using DFS)");
 MODULE_AUTHOR("SGG");
 MODULE_LICENSE("GPL");
