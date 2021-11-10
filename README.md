@@ -33,6 +33,8 @@ This command lists all tasks—including threads—in the system.
 * Now run the make command which will compile your main.c file using the Makefile of the directory, and produce several files, one of them being the main.ko file which represents the compiled kernel module.\
 `make`
 
+
+
 * Load the kernel module using the following command:\
 `sudo insmod main.ko`
 
@@ -46,3 +48,8 @@ This command lists all tasks—including threads—in the system.
 
 * To remove the module you just loaded, invoke the **rmmod** command as shown below:\
 `sudo rmmod main`
+
+
+## References
+***
+* Operating System Concepts 10th Edition – Silberschatz, Galvin, Gagne
