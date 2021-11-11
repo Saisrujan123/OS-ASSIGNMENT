@@ -53,3 +53,4 @@ This command lists all tasks—including threads—in the system.
 ## References
 ***
 * Operating System Concepts 10th Edition – Silberschatz, Galvin, Gagne
+* https://tldp.org/LDP/lkmpg/2.6/html/index.html
