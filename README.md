@@ -64,3 +64,4 @@ This command lists all tasks—including threads—in the system.
 
 * Operating System Concepts 10th Edition – Silberschatz, Galvin, Gagne
 * Stackoverflow Discussion (https://stackoverflow.com/questions/19208487/kernel-module-that-iterates-over-all-tasks-using-depth-first-tree)
+* https://tldp.org/LDP/lkmpg/2.6/html/index.html
